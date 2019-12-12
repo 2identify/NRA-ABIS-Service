@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/NRA_ABIS_Envelope" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NRA_ABIS_Envelope" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Request.Header">
+    <xs:sequence>
+      <xs:element name="CPRID" nillable="true" type="xs:long" />
+      <xs:element name="Guid" nillable="true" type="ser:guid" />
+      <xs:element name="ReferenceUID" nillable="true" type="xs:string" />
+      <xs:element name="RequestType" nillable="true" type="tns:EnvelopeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Request.Header" nillable="true" type="tns:Request.Header" />
+  <xs:simpleType name="EnvelopeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Biometric_Identification">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Biometric_Identification_Result">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Biometric_Information">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Delete_Record">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Exception">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fingerprint_Identification">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fingerprint_Identification_Result">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fingerprint_Insert">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fingerprint_Template">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fingerprint_Verification">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Portrait_Identification">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Portrait_Identification_Result">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Portrait_Verification">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Template_Extraction">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnvelopeType" nillable="true" type="tns:EnvelopeType" />
+  <xs:complexType name="Request.Detail">
+    <xs:sequence>
+      <xs:element name="Request.Detail.Fingerprint" nillable="true" type="tns:ArrayOfRequest.Detail.Fingerprint" />
+      <xs:element name="Request.Detail.Portrait" nillable="true" type="tns:ArrayOfRequest.Detail.Portrait" />
+      <xs:element name="Request.Detail.Signature" nillable="true" type="tns:ArrayOfRequest.Detail.Signature" />
+      <xs:element name="Request.Detail.Template" nillable="true" type="tns:ArrayOfRequest.Detail.Template" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Request.Detail" nillable="true" type="tns:Request.Detail" />
+  <xs:complexType name="ArrayOfRequest.Detail.Fingerprint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Request.Detail.Fingerprint" nillable="true" type="tns:Request.Detail.Fingerprint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRequest.Detail.Fingerprint" nillable="true" type="tns:ArrayOfRequest.Detail.Fingerprint" />
+  <xs:complexType name="Request.Detail.Fingerprint">
+    <xs:sequence>
+      <xs:element name="FingerStatus" nillable="true" type="tns:FingerStatus" />
+      <xs:element name="ImageData" nillable="true" type="xs:base64Binary" />
+      <xs:element name="ImageFormat" nillable="true" type="tns:ImageFormat" />
+      <xs:element name="Postion" nillable="true" type="xs:int" />
+      <xs:element name="Quality" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Request.Detail.Fingerprint" nillable="true" type="tns:Request.Detail.Fingerprint" />
+  <xs:simpleType name="FingerStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Captured">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Amputated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FingerStatus" nillable="true" type="tns:FingerStatus" />
+  <xs:simpleType name="ImageFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BMP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GIF">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISO_Plus_JPEG2K">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISO_Plus_PNG">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISO_Plus_Uncompressed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISO_Plus_WSQ">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JPG">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JPEG2K">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PNG">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TIF">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WSQ">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ImageFormat" nillable="true" type="tns:ImageFormat" />
+  <xs:complexType name="ArrayOfRequest.Detail.Portrait">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Request.Detail.Portrait" nillable="true" type="tns:Request.Detail.Portrait" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRequest.Detail.Portrait" nillable="true" type="tns:ArrayOfRequest.Detail.Portrait" />
+  <xs:complexType name="Request.Detail.Portrait">
+    <xs:sequence>
+      <xs:element name="CropLeft" nillable="true" type="xs:int" />
+      <xs:element name="CropTop" nillable="true" type="xs:int" />
+      <xs:element name="CropWidth" nillable="true" type="xs:int" />
+      <xs:element name="CropHeight" nillable="true" type="xs:int" />
+      <xs:element name="ImageDataICAO" nillable="true" type="xs:base64Binary" />
+      <xs:element name="ImageDataOriginal" nillable="true" type="xs:base64Binary" />
+      <xs:element name="ImageFormat" nillable="true" type="tns:ImageFormat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Request.Detail.Portrait" nillable="true" type="tns:Request.Detail.Portrait" />
+  <xs:complexType name="ArrayOfRequest.Detail.Signature">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Request.Detail.Signature" nillable="true" type="tns:Request.Detail.Signature" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRequest.Detail.Signature" nillable="true" type="tns:ArrayOfRequest.Detail.Signature" />
+  <xs:complexType name="Request.Detail.Signature">
+    <xs:sequence>
+      <xs:element name="ImageData" nillable="true" type="xs:base64Binary" />
+      <xs:element name="ImageFormat" nillable="true" type="tns:ImageFormat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Request.Detail.Signature" nillable="true" type="tns:Request.Detail.Signature" />
+  <xs:complexType name="ArrayOfRequest.Detail.Template">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Request.Detail.Template" nillable="true" type="tns:Request.Detail.Template" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRequest.Detail.Template" nillable="true" type="tns:ArrayOfRequest.Detail.Template" />
+  <xs:complexType name="Request.Detail.Template">
+    <xs:sequence>
+      <xs:element name="Template" nillable="true" type="xs:base64Binary" />
+      <xs:element name="TemplateFormat" nillable="true" type="tns:TemplateFormat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Request.Detail.Template" nillable="true" type="tns:Request.Detail.Template" />
+  <xs:simpleType name="TemplateFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ANSI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANSI_Plus">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ICS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ID_Kit_User">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISO_Plus">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISOCC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TemplateFormat" nillable="true" type="tns:TemplateFormat" />
+  <xs:complexType name="Response.Header">
+    <xs:sequence>
+      <xs:element name="CPRID" nillable="true" type="xs:long" />
+      <xs:element name="Guid" nillable="true" type="ser:guid" />
+      <xs:element name="ReferenceUID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response.Header" nillable="true" type="tns:Response.Header" />
+  <xs:complexType name="Response.Detail">
+    <xs:sequence>
+      <xs:element name="Response.Detail.Fingerprint" nillable="true" type="tns:ArrayOfResponse.Detail.Fingerprint" />
+      <xs:element name="Response.Detail.Portrait" nillable="true" type="tns:ArrayOfResponse.Detail.Portrait" />
+      <xs:element name="Response.Detail.Signature" nillable="true" type="tns:ArrayOfResponse.Detail.Signature" />
+      <xs:element name="Response.Detail.Template" nillable="true" type="tns:ArrayOfResponse.Detail.Template" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response.Detail" nillable="true" type="tns:Response.Detail" />
+  <xs:complexType name="ArrayOfResponse.Detail.Fingerprint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Response.Detail.Fingerprint" nillable="true" type="tns:Response.Detail.Fingerprint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponse.Detail.Fingerprint" nillable="true" type="tns:ArrayOfResponse.Detail.Fingerprint" />
+  <xs:complexType name="Response.Detail.Fingerprint">
+    <xs:sequence>
+      <xs:element name="FingerStatus" nillable="true" type="tns:FingerStatus" />
+      <xs:element name="ImageData" nillable="true" type="xs:base64Binary" />
+      <xs:element name="Postion" nillable="true" type="xs:int" />
+      <xs:element name="Quality" nillable="true" type="xs:int" />
+      <xs:element name="ImageFormat" nillable="true" type="tns:ImageFormat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response.Detail.Fingerprint" nillable="true" type="tns:Response.Detail.Fingerprint" />
+  <xs:complexType name="ArrayOfResponse.Detail.Portrait">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Response.Detail.Portrait" nillable="true" type="tns:Response.Detail.Portrait" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponse.Detail.Portrait" nillable="true" type="tns:ArrayOfResponse.Detail.Portrait" />
+  <xs:complexType name="Response.Detail.Portrait">
+    <xs:sequence>
+      <xs:element name="CropLeft" nillable="true" type="xs:int" />
+      <xs:element name="CropTop" nillable="true" type="xs:int" />
+      <xs:element name="CropWidth" nillable="true" type="xs:int" />
+      <xs:element name="CropHeight" nillable="true" type="xs:int" />
+      <xs:element name="ImageDataICAO" nillable="true" type="xs:base64Binary" />
+      <xs:element name="ImageDataOriginal" nillable="true" type="xs:base64Binary" />
+      <xs:element name="ImageFormat" nillable="true" type="tns:ImageFormat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response.Detail.Portrait" nillable="true" type="tns:Response.Detail.Portrait" />
+  <xs:complexType name="ArrayOfResponse.Detail.Signature">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Response.Detail.Signature" nillable="true" type="tns:Response.Detail.Signature" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponse.Detail.Signature" nillable="true" type="tns:ArrayOfResponse.Detail.Signature" />
+  <xs:complexType name="Response.Detail.Signature">
+    <xs:sequence>
+      <xs:element name="ImageData" nillable="true" type="xs:base64Binary" />
+      <xs:element name="ImageFormat" nillable="true" type="tns:ImageFormat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response.Detail.Signature" nillable="true" type="tns:Response.Detail.Signature" />
+  <xs:complexType name="ArrayOfResponse.Detail.Template">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Response.Detail.Template" nillable="true" type="tns:Response.Detail.Template" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponse.Detail.Template" nillable="true" type="tns:ArrayOfResponse.Detail.Template" />
+  <xs:complexType name="Response.Detail.Template">
+    <xs:sequence>
+      <xs:element name="Template" nillable="true" type="xs:base64Binary" />
+      <xs:element name="TemplateFormat" nillable="true" type="tns:TemplateFormat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response.Detail.Template" nillable="true" type="tns:Response.Detail.Template" />
+  <xs:complexType name="Response.Footer">
+    <xs:sequence>
+      <xs:element name="ResponseCode" nillable="true" type="xs:int" />
+      <xs:element name="ResponseMessage" nillable="true" type="xs:string" />
+      <xs:element name="ResponseStatus" nillable="true" type="xs:boolean" />
+      <xs:element name="ResponseType" nillable="true" type="tns:EnvelopeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response.Footer" nillable="true" type="tns:Response.Footer" />
+</xs:schema>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NRA_ABIS_Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd2" namespace="NRA_ABIS_Envelope.Request" />
+      <xsd:import schemaLocation="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/NRA_ABIS_Envelope" />
+      <xsd:import schemaLocation="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd4" namespace="NRA_ABIS_Envelope.Response" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INRA_ABIS_Service_Is_Service_Running_InputMessage">
+    <wsdl:part name="parameters" element="tns:Is_Service_Running" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Is_Service_Running_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Is_Service_RunningResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Biometric_Identification_InputMessage">
+    <wsdl:part name="parameters" element="tns:Biometric_Identification" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Biometric_Identification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Biometric_IdentificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Biometric_Identification_Result_InputMessage">
+    <wsdl:part name="parameters" element="tns:Biometric_Identification_Result" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Biometric_Identification_Result_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Biometric_Identification_ResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Biometric_Information_InputMessage">
+    <wsdl:part name="parameters" element="tns:Biometric_Information" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Biometric_Information_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Biometric_InformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Fingerprint_Identification_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fingerprint_Identification" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Fingerprint_Identification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fingerprint_IdentificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Fingerprint_Identification_Result_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fingerprint_Identification_Result" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Fingerprint_Identification_Result_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fingerprint_Identification_ResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Fingerprint_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fingerprint_Insert" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Fingerprint_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fingerprint_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Fingerprint_Template_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fingerprint_Template" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Fingerprint_Template_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fingerprint_TemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Fingerprint_Verification_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fingerprint_Verification" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Fingerprint_Verification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fingerprint_VerificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Portrait_Identification_InputMessage">
+    <wsdl:part name="parameters" element="tns:Portrait_Identification" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Portrait_Identification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Portrait_IdentificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Portrait_Identification_Result_InputMessage">
+    <wsdl:part name="parameters" element="tns:Portrait_Identification_Result" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Portrait_Identification_Result_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Portrait_Identification_ResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Portrait_Verification_InputMessage">
+    <wsdl:part name="parameters" element="tns:Portrait_Verification" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Portrait_Verification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Portrait_VerificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Delete_Record_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Record" />
+  </wsdl:message>
+  <wsdl:message name="INRA_ABIS_Service_Delete_Record_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_RecordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INRA_ABIS_Service">
+    <wsdl:operation name="Is_Service_Running">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Is_Service_Running_Request" message="tns:INRA_ABIS_Service_Is_Service_Running_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Is_Service_Running_Response" message="tns:INRA_ABIS_Service_Is_Service_Running_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Biometric_Identification">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Biometric_Identification_Request" message="tns:INRA_ABIS_Service_Biometric_Identification_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Biometric_Identification_Response" message="tns:INRA_ABIS_Service_Biometric_Identification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Biometric_Identification_Result">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Biometric_Identification_Result_Request" message="tns:INRA_ABIS_Service_Biometric_Identification_Result_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Biometric_Identification_Result_Response" message="tns:INRA_ABIS_Service_Biometric_Identification_Result_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Biometric_Information">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Biometric_Information_Request" message="tns:INRA_ABIS_Service_Biometric_Information_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Biometric_Information_Response" message="tns:INRA_ABIS_Service_Biometric_Information_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fingerprint_Identification">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Identification_Request" message="tns:INRA_ABIS_Service_Fingerprint_Identification_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Identification_Response" message="tns:INRA_ABIS_Service_Fingerprint_Identification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fingerprint_Identification_Result">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Identification_Result_Request" message="tns:INRA_ABIS_Service_Fingerprint_Identification_Result_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Identification_Result_Response" message="tns:INRA_ABIS_Service_Fingerprint_Identification_Result_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fingerprint_Insert">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Insert_Request" message="tns:INRA_ABIS_Service_Fingerprint_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Insert_Response" message="tns:INRA_ABIS_Service_Fingerprint_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fingerprint_Template">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Template_Request" message="tns:INRA_ABIS_Service_Fingerprint_Template_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Template_Response" message="tns:INRA_ABIS_Service_Fingerprint_Template_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fingerprint_Verification">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Verification_Request" message="tns:INRA_ABIS_Service_Fingerprint_Verification_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Verification_Response" message="tns:INRA_ABIS_Service_Fingerprint_Verification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Portrait_Identification">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Portrait_Identification_Request" message="tns:INRA_ABIS_Service_Portrait_Identification_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Portrait_Identification_Response" message="tns:INRA_ABIS_Service_Portrait_Identification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Portrait_Identification_Result">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Portrait_Identification_Result_Request" message="tns:INRA_ABIS_Service_Portrait_Identification_Result_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Portrait_Identification_Result_Response" message="tns:INRA_ABIS_Service_Portrait_Identification_Result_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Portrait_Verification">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Portrait_Verification_Request" message="tns:INRA_ABIS_Service_Portrait_Verification_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Portrait_Verification_Response" message="tns:INRA_ABIS_Service_Portrait_Verification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Record">
+      <wsdl:input wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Delete_Record_Request" message="tns:INRA_ABIS_Service_Delete_Record_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:49950/Services/NRA_ABIS_Service.svc/Delete_Record_Response" message="tns:INRA_ABIS_Service_Delete_Record_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INRA_ABIS_Service" type="tns:INRA_ABIS_Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Is_Service_Running">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Is_Service_Running_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Biometric_Identification">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Biometric_Identification_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Biometric_Identification_Result">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Biometric_Identification_Result_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Biometric_Information">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Biometric_Information_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fingerprint_Identification">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Identification_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fingerprint_Identification_Result">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Identification_Result_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fingerprint_Insert">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Insert_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fingerprint_Template">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Template_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fingerprint_Verification">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Fingerprint_Verification_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Portrait_Identification">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Portrait_Identification_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Portrait_Identification_Result">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Portrait_Identification_Result_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Portrait_Verification">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Portrait_Verification_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Record">
+      <soap:operation soapAction="http://localhost:49950/Services/NRA_ABIS_Service.svc/Delete_Record_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NRA_ABIS_Service">
+    <wsdl:port name="BasicHttpBinding_INRA_ABIS_Service" binding="tns:BasicHttpBinding_INRA_ABIS_Service">
+      <soap:address location="http://localhost:49950/Services/NRA_ABIS_Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

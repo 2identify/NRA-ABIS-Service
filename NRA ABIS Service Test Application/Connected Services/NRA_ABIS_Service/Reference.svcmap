@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1c4dde4b-427d-4414-bb98-7bc5467e40aa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49950/Services/NRA_ABIS_Service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NRA_ABIS_Service.disco" MetadataType="Disco" ID="dceeceb9-d10d-407d-b361-1d13b0849c82" SourceId="1" SourceUrl="http://localhost:49950/Services/NRA_ABIS_Service.svc?disco" />
+    <MetadataFile FileName="NRA_ABIS_Service.wsdl" MetadataType="Wsdl" ID="3b9e8148-28c3-472e-983f-55061e2a07f8" SourceId="1" SourceUrl="http://localhost:49950/Services/NRA_ABIS_Service.svc?wsdl" />
+    <MetadataFile FileName="NRA_ABIS_Service.xsd" MetadataType="Schema" ID="1153906f-8569-4493-a4e0-4f19dbb6d56a" SourceId="1" SourceUrl="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd4" />
+    <MetadataFile FileName="NRA_ABIS_Service1.xsd" MetadataType="Schema" ID="0a477221-436e-4d98-8b29-37b21815dcd2" SourceId="1" SourceUrl="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="NRA_ABIS_Service2.xsd" MetadataType="Schema" ID="5b3087a0-bf52-442f-b9b0-19864d3d4824" SourceId="1" SourceUrl="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="NRA_ABIS_Service3.xsd" MetadataType="Schema" ID="832961b1-98ad-43b8-922b-218c9451dfe6" SourceId="1" SourceUrl="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd3" />
+    <MetadataFile FileName="NRA_ABIS_Service4.xsd" MetadataType="Schema" ID="9064071d-cd37-4147-8348-c1c40dfe1a0d" SourceId="1" SourceUrl="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NRA_ABIS_Service_Test_Application.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="endpoint_url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:49950/Services/NRA_ABIS_Service.svc</Value>
+    </Setting>
+    <Setting Name="last_endpoint" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

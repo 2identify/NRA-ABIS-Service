@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="NRA_ABIS_Service.NRA_ABIS_Service" CodeBehind="NRA_ABIS_Service.svc.cs" %>

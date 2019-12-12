@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="NRA_ABIS_Envelope.Request" elementFormDefault="qualified" targetNamespace="NRA_ABIS_Envelope.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/NRA_ABIS_Envelope" />
+  <xs:complexType name="NRA_ABIS_Envelope.Request">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/NRA_ABIS_Envelope" name="Request.Header" nillable="true" type="q1:Request.Header" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/NRA_ABIS_Envelope" name="Request.Detail" nillable="true" type="q2:Request.Detail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NRA_ABIS_Envelope.Request" nillable="true" type="tns:NRA_ABIS_Envelope.Request" />
+</xs:schema>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd2" namespace="NRA_ABIS_Envelope.Request" />
+  <xs:import schemaLocation="http://localhost:49950/Services/NRA_ABIS_Service.svc?xsd=xsd4" namespace="NRA_ABIS_Envelope.Response" />
+  <xs:element name="Is_Service_Running">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Is_Service_RunningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Is_Service_RunningResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Biometric_Identification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="NRA_ABIS_Envelope.Request" minOccurs="0" name="Request" nillable="true" type="q1:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Biometric_IdentificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="NRA_ABIS_Envelope.Response" minOccurs="0" name="Biometric_IdentificationResult" nillable="true" type="q2:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Biometric_Identification_Result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="NRA_ABIS_Envelope.Request" minOccurs="0" name="Request" nillable="true" type="q3:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Biometric_Identification_ResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="NRA_ABIS_Envelope.Response" minOccurs="0" name="Biometric_Identification_ResultResult" nillable="true" type="q4:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Biometric_Information">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="NRA_ABIS_Envelope.Request" minOccurs="0" name="Request" nillable="true" type="q5:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Biometric_InformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="NRA_ABIS_Envelope.Response" minOccurs="0" name="Biometric_InformationResult" nillable="true" type="q6:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fingerprint_Identification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="NRA_ABIS_Envelope.Request" minOccurs="0" name="Request" nillable="true" type="q7:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fingerprint_IdentificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="NRA_ABIS_Envelope.Response" minOccurs="0" name="Fingerprint_IdentificationResult" nillable="true" type="q8:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fingerprint_Identification_Result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="NRA_ABIS_Envelope.Request" minOccurs="0" name="Request" nillable="true" type="q9:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fingerprint_Identification_ResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="NRA_ABIS_Envelope.Response" minOccurs="0" name="Fingerprint_Identification_ResultResult" nillable="true" type="q10:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fingerprint_Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="NRA_ABIS_Envelope.Request" minOccurs="0" name="request" nillable="true" type="q11:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fingerprint_InsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="NRA_ABIS_Envelope.Response" minOccurs="0" name="Fingerprint_InsertResult" nillable="true" type="q12:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fingerprint_Template">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="NRA_ABIS_Envelope.Request" minOccurs="0" name="Request" nillable="true" type="q13:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fingerprint_TemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="NRA_ABIS_Envelope.Response" minOccurs="0" name="Fingerprint_TemplateResult" nillable="true" type="q14:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fingerprint_Verification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="NRA_ABIS_Envelope.Request" minOccurs="0" name="Request" nillable="true" type="q15:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fingerprint_VerificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="NRA_ABIS_Envelope.Response" minOccurs="0" name="Fingerprint_VerificationResult" nillable="true" type="q16:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Portrait_Identification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="NRA_ABIS_Envelope.Request" minOccurs="0" name="Request" nillable="true" type="q17:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Portrait_IdentificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="NRA_ABIS_Envelope.Response" minOccurs="0" name="Portrait_IdentificationResult" nillable="true" type="q18:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Portrait_Identification_Result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="NRA_ABIS_Envelope.Request" minOccurs="0" name="Request" nillable="true" type="q19:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Portrait_Identification_ResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="NRA_ABIS_Envelope.Response" minOccurs="0" name="Portrait_Identification_ResultResult" nillable="true" type="q20:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Portrait_Verification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="NRA_ABIS_Envelope.Request" minOccurs="0" name="Request" nillable="true" type="q21:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Portrait_VerificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="NRA_ABIS_Envelope.Response" minOccurs="0" name="Portrait_VerificationResult" nillable="true" type="q22:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Record">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="NRA_ABIS_Envelope.Request" minOccurs="0" name="request" nillable="true" type="q23:NRA_ABIS_Envelope.Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_RecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="NRA_ABIS_Envelope.Response" minOccurs="0" name="Delete_RecordResult" nillable="true" type="q24:NRA_ABIS_Envelope.Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
